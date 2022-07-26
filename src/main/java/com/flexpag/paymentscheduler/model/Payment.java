@@ -43,8 +43,7 @@ public class Payment {
 	private BigDecimal valor;
 	
 	@Column
-	private String status = "pending";
-	
+	private String status;
 	
 	public Long getId() {
 		return id;
