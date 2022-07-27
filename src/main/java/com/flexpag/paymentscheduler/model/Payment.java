@@ -37,13 +37,14 @@ public class Payment {
 	@Column 
 	@NonNull
 	private LocalDate dataAgendamento;
-	
+		
 	@Column
 	@NonNull
 	private BigDecimal valor;
 	
+	//Acredito que uma opção para o status seria utilizar boolean.
 	@Column
-	private String status;
+	private String status = "pending";
 	
 	public Long getId() {
 		return id;
@@ -92,7 +93,4 @@ public class Payment {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
-
 }

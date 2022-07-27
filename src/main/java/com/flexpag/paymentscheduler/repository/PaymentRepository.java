@@ -9,7 +9,4 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 	
 	List<Payment> findAllByStatusContainingIgnoreCase(String status);
 	
-
-	
-
 }
