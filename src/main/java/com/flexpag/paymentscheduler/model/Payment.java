@@ -1,18 +1,14 @@
 package com.flexpag.paymentscheduler.model;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 import lombok.NonNull;
@@ -30,27 +26,27 @@ public class Payment {
 	@NonNull
 	private String codigoDeBarras;
 	
-	@Column
-	@NonNull
-	private LocalDate dataVencimento;
-	
 	@Column 
 	@NonNull
+	//Para teste, utilizar YYYY/mm/dd 
 	private LocalDate dataAgendamento;
+	
+	@Column
+	@NonNull
+	private String hora;
 		
 	@Column
 	@NonNull
 	private BigDecimal valor;
 	
-	//Acredito que uma opção para o status seria utilizar boolean.
 	@Column
 	private String status = "pending";
-	
-	public Long getId() {
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -60,14 +56,6 @@ public class Payment {
 
 	public void setCodigoDeBarras(String codigoDeBarras) {
 		this.codigoDeBarras = codigoDeBarras;
-	}
-
-	public LocalDate getDataVencimento() {
-		return dataVencimento;
-	}
-
-	public void setDataVencimento(LocalDate dataVencimento) {
-		this.dataVencimento = dataVencimento;
 	}
 
 	public LocalDate getDataAgendamento() {
@@ -93,4 +81,15 @@ public class Payment {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+	 
+	
 }
+	
