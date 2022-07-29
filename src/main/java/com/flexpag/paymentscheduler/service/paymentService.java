@@ -25,13 +25,9 @@ public class paymentService {
 	public Optional<Payment>getPaymentById(Long id){
 		return paymentRepository.findById(id);
 	}
-	
-		
+			
 	//Deletar agendamento por id
 	public void deletePayment(Long id) {
 		paymentRepository.deleteById(id);
 	}
-	
-	
-	
 }

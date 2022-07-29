@@ -15,7 +15,6 @@ import lombok.NonNull;
 
 @Entity
 @Data
-
 public class Payment {
 	
 	@Id
